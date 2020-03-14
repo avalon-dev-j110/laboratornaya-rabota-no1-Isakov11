@@ -12,7 +12,7 @@ public class Main {
         Person ivanov = null;
         Person smith = null;
 
-        /*
+        /*1
          * TODO(Студент): Создайте экземпляры класса 'Person'
          *
          * 1. Проинициализируейте переменную 'ivanov', так,
