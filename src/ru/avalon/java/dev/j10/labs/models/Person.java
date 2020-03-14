@@ -1,18 +1,25 @@
 package ru.avalon.java.dev.j10.labs.models;
-
+import ru.avalon.java.dev.j10.labs.commons.Address;
 /**
  * Представление о человеке.
  * <p>
  * С точки зрения задания человек представляется как сущность,
  * наделённая:
  * <ol>
- *     <li>именем;
  *     <li>паспортными данными;
  *     <li>пропиской по месту жительства.
  * </ol>
  */
+
 public class Person {
 
+    
+    private Passport passport;    
+
+    public Person(Passport passport) {
+        this.passport = passport;
+        
+    }
     /**
      * Возврвщает полное имя человека.
      * <p>
@@ -34,6 +41,9 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
+        if (!passport.getPatronymic().equals("")){return passport.getName() + " " + passport.getSurname() + " " + passport.getPatronymic();};        
+        if (!passport.getSecondName().equals("")){return passport.getName() + " " + passport.getSecondName().charAt(0)+ ". " + passport.getSurname();};  
+        if (passport.getSecondName().equals("") && passport.getPatronymic().equals("") ){return passport.getName() + " " + passport.getSurname();}; 
         return null;
     }
 
@@ -49,6 +59,6 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getAddress()' класса 'Person'
          */
-        return null;
+        return passport.getAddress();
     }
 }
