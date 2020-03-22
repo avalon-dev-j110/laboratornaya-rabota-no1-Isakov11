@@ -12,13 +12,11 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  */
 
 public class Person {
-
     
-    private Passport passport;    
-
+    private Passport passport;
+    
     public Person(Passport passport) {
-        this.passport = passport;
-        
+        this.passport = passport;        
     }
     /**
      * Возврвщает полное имя человека.
@@ -41,9 +39,18 @@ public class Person {
         /*
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
-        if (!passport.getPatronymic().equals("")){return passport.getName() + " " + passport.getSurname() + " " + passport.getPatronymic();};        
-        if (!passport.getSecondName().equals("")){return passport.getName() + " " + passport.getSecondName().charAt(0)+ ". " + passport.getSurname();};  
-        if (passport.getSecondName().equals("") && passport.getPatronymic().equals("") ){return passport.getName() + " " + passport.getSurname();}; 
+        if (passport.getName()!= null && passport.getSurname()!= null && 
+           !passport.getName().equals("") && !passport.getSurname().equals(""))
+        {            
+           if (passport.getPatronymic() != null && !passport.getPatronymic().equals("")){
+            return passport.getName() + " " + passport.getSurname() + " " + passport.getPatronymic();}
+        
+           if (passport.getSecondName() != null && !passport.getSecondName().equals("")){
+            return passport.getName() + " " + passport.getSecondName().charAt(0)+ ". " + passport.getSurname();}
+            
+           if (passport.getSecondName() == null && passport.getPatronymic() == null){
+            return passport.getName() + " " + passport.getSurname();}
+        }
         return null;
     }
 

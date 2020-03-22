@@ -22,8 +22,8 @@ import ru.avalon.java.dev.j10.labs.commons.*;
          *    описывающий человека по имени 'John Edvard Smith'.
          */
 
-        Address ivanovAddress = new Address("Россия", "Москва", "ул. Ленина", "12",56,123456);
-        Address smithAddress = new Address("USA", "New-York", "11 line st.", "119",4,987456);
+        Address ivanovAddress = new Address("Россия", "Москва", "ул. Ленина", "12","56","123456");
+        Address smithAddress = new Address("USA", "New-York", "11 line st.", "119","4","98745-6458");
         Passport ivanovPass = new Passport.Builder()
                 .withName("Иван")
                 .withSurname("Иванов")
@@ -32,7 +32,7 @@ import ru.avalon.java.dev.j10.labs.commons.*;
                 .withDocNumber("1234")
                 .withDocSeries("54 89 78")
                 .withIssueDate("01.01.1001")
-                .withIssuer("ОУФМЦ")
+                .withIssuer("ОУФМС")
                 .withaddress(ivanovAddress)
                 .build();        
         Person ivanov = new Person(ivanovPass);
@@ -50,13 +50,11 @@ import ru.avalon.java.dev.j10.labs.commons.*;
                 .build(); 
         Person smith = new Person(smithPass);
 
-              
          /*
          * 3. Строковую переменную, содержащую адрес проживания
          *    человека, описанного объектом, адресованным
          *    переменной 'ivanov'.
-         */
-        
+         */        
         String getAddressIvanov = ivanov.getAddress();
          
          /* 4. Строковую переменную, содержащую адрес проживания
@@ -72,6 +70,6 @@ import ru.avalon.java.dev.j10.labs.commons.*;
          * отдельной строке.
          */
         System.out.println(getAddressIvanov);
-        System.out.println(getAddressSmith);
+        System.out.println(getAddressSmith);        
     }
 }

@@ -19,10 +19,10 @@ public class Address {
     private String city;
     private String street;
     private String buildingNumber;
-    private int flatNumber;
-    private int postCode;
+    private String flatNumber;
+    private String postCode;
     
-    public Address (String country, String city, String street, String buildingNumber,int flatNumber,int postCode){
+    public Address (String country, String city, String street, String buildingNumber,String flatNumber,String postCode){
         this.country = country;
         this.city = city;
         this.street = street;

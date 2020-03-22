@@ -144,6 +144,5 @@ public class Passport {
 
     public String getAddress() {
         return address.getAddress();
-    }
-        
+    }        
 }
