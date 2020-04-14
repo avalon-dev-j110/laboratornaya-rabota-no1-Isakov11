@@ -13,3 +13,24 @@
  * 4. Подумайте над тем, какие методы должны быть объявлены
  *    в классе.
  */
+package ru.avalon.java.dev.j10.labs.commons;
+public class Address {
+    private String country;
+    private String city;
+    private String street;
+    private String buildingNumber;
+    private String flatNumber;
+    private String postCode;
+    
+    public Address (String country, String city, String street, String buildingNumber,String flatNumber,String postCode){
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.buildingNumber = buildingNumber;
+        this.flatNumber = flatNumber;
+        this.postCode = postCode;
+    }
+    public String getAddress() {                
+        return country + ", " + city + ", " + street + ", " + buildingNumber + ", " + flatNumber;
+    }
+}
